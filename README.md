@@ -19,3 +19,29 @@ Ejecutar en local
 ```shell
 ionic serve
 ```
+
+# Construir APK
+
+## Set Up Local Workspace
+
+Version de Java 17 necesario
+
+```shell
+ionic build
+```
+
+```shell
+ionic capacitor add android
+```
+
+```shell
+ionic capacitor copy android
+```
+
+```shell
+cd android
+```
+
+```shell
+./gradlew assembleDebug
+```
