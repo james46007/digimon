@@ -35,7 +35,7 @@ export class LoginPage {
       if (!res.user.emailVerified) {
         return alert('Verifica correo para iniciar sesion.');
       }
-
+      this.router.navigateByUrl('/grid')
     }).catch((err: any) => {
       alert('Credenciales incorrectas');
     });

@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Digimons</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="4" *ngFor="let digimon of digimons">
+        <app-card [digimon]="digimon" (click)="presentPopover($event, digimon)"></app-card>
+      </ion-col>
+    </ion-row>
+    <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-grid>
+
+  <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false"
+               side="top" alignment="center"
+               size="auto"
+  >
+    <ng-template>
+      <app-card [digimon]="selectedDigimon"></app-card>
+    </ng-template>
+  </ion-popover>
+</ion-content>
+

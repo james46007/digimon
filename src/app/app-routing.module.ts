@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./singup/singup.module').then(m => m.SingupPageModule)
   },
   {
+    path: 'grid',
+    loadChildren: () => import('./grid/grid.module').then( m => m.GridPageModule)
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
