@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrate aquí</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Atrás"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-pading">
+  <div class="form" [formGroup]="registreForm">
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input formControlName="name" name="name" type="text" aria-label="Name"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="registreF?.['name']?.['errors']">
+      <ion-text color="danger" *ngIf="registreF?.['name']?.['errors']?.['required']">Nombre es requerido.</ion-text>
+      <ion-text color="danger" *ngIf="registreF?.['name']?.['errors']?.['minlength']">Nombre debe tener al menos 3 caracteres.</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Correo</ion-label>
+      <ion-input formControlName="email" name="email" type="email" aria-label="Email"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="registreF?.['email']?.['errors']">
+      <ion-text color="danger" *ngIf="registreF?.['email']?.['errors']?.['required']">Correo electrónico es requerido.</ion-text>
+      <ion-text color="danger" *ngIf="registreF?.['email']?.['errors']?.['pattern']">Correo electrónico no válido.</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input formControlName="password" name="password" type="password" aria-label="Password"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="registreF?.['password']?.['errors']">
+      <ion-text color="danger" *ngIf="registreF?.['password']?.['errors']?.['required']">Contraseña es requerida.</ion-text>
+      <ion-text color="danger" *ngIf="registreF?.['password']?.['errors']?.['minlength']">Contraseña debe tener al menos 6 caracteres.</ion-text>
+    </ion-item>
+    <br>
+    <ion-button (click)='signup()' expand='block'>Registrase</ion-button>
+  </div>
+</ion-content>

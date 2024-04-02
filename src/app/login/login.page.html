@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div class="form" [formGroup]="loginForm">
+
+    <ion-item>
+      <ion-label position="stacked">Correo</ion-label>
+      <ion-input formControlName="email" name="email" type="email" aria-label="Email"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="loginF?.['email']?.['errors']">
+      <ion-text color="danger" *ngIf="loginF?.['email']?.['errors']?.['required']">Correo electrónico es requerido.</ion-text>
+      <ion-text color="danger" *ngIf="loginF?.['email']?.['errors']?.['pattern']">Correo electrónico no válido.</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input formControlName="password" name="password" type="password" aria-label="Password"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="loginF?.['password']?.['errors']">
+      <ion-text color="danger" *ngIf="loginF?.['password']?.['errors']?.['required']">Contraseña es requerida.</ion-text>
+      <ion-text color="danger" *ngIf="loginF?.['password']?.['errors']?.['minlength']">Contraseña debe tener al menos 6 caracteres.</ion-text>
+    </ion-item>
+
+
+    <ion-button (click)='login()' expand='block'>Iniciar Sesión</ion-button>
+    <br>
+
+    <h5 (click)="signup()">¿No tienes cuenta?
+      <ion-text color='primary'>Registrate aquí</ion-text>
+    </h5>
+
+  </div>
+</ion-content>
