@@ -1,20 +1,14 @@
-{
-  "applinks": {
-    "apps": [],
-    "details": [
-      {
-        "appID": "ABCD1234.com.your.app",
-        "paths": [
-          "/facturación/",
-          "/facturación/*"
-        ]
-      },
-      {
-        "appID": "ABCD1234.com.your.app",
-        "paths": [
-          "*"
-        ]
-      }
-    ]
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.papagayode.fortaleza",
+      "sha256_cert_fingerprints": [
+        "FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C",
+        "AF:74:6A:37:78:B8:2B:8F:AA:F6:5D:38:89:EF:A7:AC:51:AD:5D:C9:0F:93:68:7B:30:84:70:08:82:6F:A4:BE"
+      ]
+    }
   }
-}
+]
+
