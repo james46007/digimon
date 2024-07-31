@@ -1,0 +1,20 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "ABCD1234.com.your.app",
+        "paths": [
+          "/facturación/",
+          "/facturación/*"
+        ]
+      },
+      {
+        "appID": "ABCD1234.com.your.app",
+        "paths": [
+          "*"
+        ]
+      }
+    ]
+  }
+}
